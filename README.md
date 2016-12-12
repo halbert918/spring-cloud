@@ -62,5 +62,4 @@ spring-cloud
     c) @EnableZipkinServer开启调用链监控
     d) 各应用服务配置：
         spring.zipkin.base-url: http://127.0.0.1:9411
-        ps:调用restTemplate会自动注入追踪span信息上传到zipkin服务，
-           可通过http://127.0.0.1:9411查看其调用链信息
+        ps:调用restTemplate会自动注入追踪span信息上传到zipkin服务，可通过http://127.0.0.1:9411查看其调用链信息
