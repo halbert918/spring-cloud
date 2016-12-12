@@ -2,12 +2,16 @@
 spring-cloud
 
 1、spring-eureka：服务注册与发现
+
     a) 添加依赖
+    
       <dependency>
           <groupId>org.springframework.cloud</groupId>
           <artifactId>spring-cloud-starter-eureka-server</artifactId>
       </dependency>
+      
     b) 通过注解@EnableEurekaServer开启服务
+    
     c) 通过配置文件设置eureka服务
         server:
           port: 8088
@@ -19,7 +23,9 @@ spring-cloud
             fetchRegistry: false         #是否拉取服务
             serviceUrl:
               defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+              
     d) 通过访问127.0.0.1:8088查看已注册的相关服务应用
+    
 2、spring-eureka-provider：服务提供者
     a) 引入依赖
     b) 配置服务注册发现地址
@@ -50,5 +56,5 @@ spring-cloud
     c) @EnableZipkinServer开启调用链监控
     d) 各应用服务配置：
         spring.zipkin.base-url: http://127.0.0.1:9411
-        ps:调用restTemplate会自动注入追踪span信息上传到zipkin服务；
-           可通过http://127.0.0.1:9411查看其调用链信息
+        ps:调用restTemplate会自动注入追踪span信息上传到zipkin服务，
+           可通过http://127.0.0.1:9411查看其调用链信息
