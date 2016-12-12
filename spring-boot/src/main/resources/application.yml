@@ -1,0 +1,6 @@
+#配置应用名称-注册时使用
+spring:
+ application:
+  name: spring-cloud
+ profile: dev
+

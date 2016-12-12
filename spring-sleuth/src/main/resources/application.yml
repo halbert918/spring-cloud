@@ -1,0 +1,22 @@
+server:
+  port: 9411
+
+spring:
+#  datasource:
+#    schema: classpath:/mysql.sql
+#    url: jdbc:mysql://zipkin_mysql:3306/zipkin
+#    username: zipkin
+#    password: zipkin
+#    initialize: true
+#    continueOnError: true
+
+
+  sleuth:
+    enabled: false
+    hystrix:
+      strategy:
+        enabled: false
+
+zipkin:
+  storage:
+    type: mem #mysql #存储位置  内存 ｜　ｍｙｓｑｌ

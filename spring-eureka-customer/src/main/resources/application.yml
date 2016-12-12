@@ -1,0 +1,24 @@
+#配置应用名称-注册时使用
+spring:
+ application:
+  name: spring-eureka-customer
+  # 配置zipkin，依赖zipkin相关包后，调用restTemplate会自动注入追踪span信息到zipkin服务后台
+  # 可通过访问其后天地址查看器信息http://127.0.0.1:9411
+  zipkin:
+   　base-url: http://127.0.0.1:9411
+
+# sample:
+#   zipkin:
+#     enabled: true
+
+#配置服务注册发现地址
+eureka:
+ client:
+   serviceUrl:
+     defaultZone: http://127.0.0.1:8088/eureka/
+
+#设置负载策略：按照响应时间分配
+#spring-cloud:
+spring-eureka-provider:
+ ribbon:
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule

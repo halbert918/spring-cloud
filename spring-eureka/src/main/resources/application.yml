@@ -1,0 +1,11 @@
+server:
+  port: 8088
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    registerWithEureka: false   #是否注册到服务（eureka本身是对外提供注册发现的应用服务，不需将自己注册）
+    fetchRegistry: false         #是否拉取服务
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
